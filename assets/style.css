@@ -493,3 +493,9 @@ h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
 @media (min-width: 1000px) { .now-grid { grid-template-columns: minmax(0, 40rem) minmax(0, 18rem); column-gap: 3rem; justify-content: space-between; } .shoggoth { width: 100%; } }
 /* the shoggoth sits straight on the page, no white card */
 .shoggoth img { background: none; border: 0; border-radius: 0; box-shadow: none; }
+/* footnotes inside picture captions open right under the caption, never in the margin */
+@media (min-width: 1100px) {
+  .shoggoth .sn-check:checked + .sn-ref + .sn, .cartoon .sn-check:checked + .sn-ref + .sn {
+    float: none; width: auto; margin: 0.5rem 0 0; padding: 0.55rem 0.75rem; background: var(--note); border-radius: 8px; color: var(--ink); font-size: 0.92rem;
+  }
+}
