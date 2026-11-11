@@ -566,3 +566,16 @@ h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
 .jour-cols .clips a { font-size: 1.02rem; }
 @media (min-width: 1000px) { .jour-cols { grid-template-columns: 1fr 1fr; column-gap: 3.5rem; } }
 @media (max-width: 520px) { .jour-cols .clips li { grid-template-columns: minmax(0, 1fr); } }
+
+/* smart fit, no big gaps */
+#curiosities .cur-intro .cartoon img { width: 100%; height: auto; }
+@media (min-width: 900px) { #curiosities .cur-intro { grid-template-columns: minmax(0, 1fr) 19rem; } }
+#research .ai-top { align-items: center; }
+#research .ai-top .shoggoth { margin: 0; width: min(13rem, 70%); }
+@media (min-width: 1000px) {
+  #research .ai-top { grid-template-columns: minmax(0, 1fr) 13rem !important; column-gap: 3.5rem; }
+  #research .ai-top .shoggoth { width: 100%; }
+  #research .ai-cols { grid-template-columns: 1fr 1.15fr 1fr !important; column-gap: 2.75rem; }
+  #research .ai-col3 { grid-column: auto !important; grid-template-columns: 1fr !important; }
+}
+.about { align-items: center; }
