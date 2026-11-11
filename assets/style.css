@@ -250,7 +250,6 @@ main { padding-bottom: 2rem; }
   border: 1px solid var(--line); border-radius: 4px; position: relative; display: grid; gap: 0.6rem;
   box-shadow: 0 1px 0 var(--line), 0 14px 30px -22px rgb(51 40 31 / 0.45);
 }
-.paper::after { content: ""; position: absolute; inset: 6px -6px -6px 6px; z-index: -1; background: var(--paper-deep); border: 1px solid var(--line); border-radius: 4px; }
 .paper { isolation: isolate; }
 .num { font-family: var(--display); font-size: 1.15em; color: var(--olive); white-space: nowrap; }
 ::selection { background: color-mix(in srgb, var(--olive-soft) 60%, transparent); color: var(--ink); }
