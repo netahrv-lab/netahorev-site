@@ -173,3 +173,15 @@
     ref.addEventListener('mouseenter', on); ref.addEventListener('mouseleave', off);
   });
 })();
+
+/* gentle arrival for the questions cards and the Now list, once, as they come into view */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  const groups = [...document.querySelectorAll('.qs, .now')];
+  groups.forEach((g) => [...g.children].forEach((li, i) => li.style.setProperty('--k', i)));
+  document.documentElement.classList.add('reveal-ready');
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+  }), { rootMargin: '0px 0px -12% 0px' });
+  groups.forEach((g) => io.observe(g));
+})();
