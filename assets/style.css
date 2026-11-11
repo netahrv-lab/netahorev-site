@@ -468,3 +468,13 @@ h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
 @media (min-width: 1100px) {
   .about .sn-check:checked + .sn-ref + .sn { float: none; width: auto; margin: 0.6rem 0; padding: 0.6rem 0.8rem; background: var(--note); border-radius: 8px; color: var(--ink); }
 }
+
+/* meme moments: Neta's shrug and the judge cartoon */
+.cur-intro { display: grid; gap: 1.5rem; align-items: center; margin-bottom: 2rem; }
+.meme { margin: 0; width: min(15rem, 70vw); display: grid; gap: 0.5rem; justify-self: start; }
+.meme img { border-radius: 14px; transform: rotate(1.5deg); box-shadow: 0 14px 30px -22px rgb(51 40 31 / 0.55); }
+.meme figcaption, .cartoon figcaption { font-family: var(--hand); color: var(--ink-soft); font-size: 1rem; line-height: 1.4; }
+@media (min-width: 900px) { .cur-intro { grid-template-columns: minmax(0, 1fr) 15rem; column-gap: 3rem; } .meme { width: 100%; } }
+.cartoon { margin: 2.2rem 0 0; width: min(22rem, 100%); display: grid; gap: 0.3rem; justify-items: center; color: var(--ink); }
+.cartoon svg { width: 100%; height: auto; overflow: visible; }
+.cartoon .ico { stroke-width: 2; }
