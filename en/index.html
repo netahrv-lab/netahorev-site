@@ -82,6 +82,8 @@
 
     <figure class="cover"><img src="/assets/cover.jpg" width="1200" height="560" alt="Neta working on a laptop by a huge window overlooking the city" fetchpriority="high"></figure>
 
+    <figure class="cover"><img src="/assets/cover.jpg" width="1200" height="560" alt="Neta working on a laptop by a huge window overlooking the city" fetchpriority="high"></figure>
+
     <section class="hero" id="top" aria-labelledby="name">
       <div>
         <h1 class="hero__name" id="name"><span class="w">Neta</span> <span class="w">Horev</span><span class="hero__aka">(formerly Chehanovski)</span></h1>
@@ -96,13 +98,21 @@
     </section>
 
     <nav class="path" aria-label="The trail through this page">
-      <svg class="path__svg" viewBox="0 0 1000 170" preserveAspectRatio="none" aria-hidden="true">
+      <svg class="path__svg path__svg--d" viewBox="0 0 1000 170" preserveAspectRatio="none" aria-hidden="true">
         <defs>
           <mask id="trail-mask" maskUnits="userSpaceOnUse" x="-20" y="-20" width="1040" height="210">
             <path class="path__reveal" pathLength="1" d="M20 104C70 104 95 70 140 70S250 118 300 118 410 62 460 62 570 118 620 118 730 62 780 62 890 104 930 104" fill="none" stroke="#fff" stroke-width="16"/>
           </mask>
         </defs>
-        <path class="path__line" mask="url(#trail-mask)" d="M20 104C70 104 95 70 140 70S250 118 300 118 410 62 460 62 570 118 620 118 730 62 780 62 890 104 930 104"/>
+        <path class="path__line path__line--d" mask="url(#trail-mask)" d="M20 104C70 104 95 70 140 70S250 118 300 118 410 62 460 62 570 118 620 118 730 62 780 62 890 104 930 104"/>
+      </svg>
+      <svg class="path__svg path__svg--m" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <mask id="trail-mask-m" maskUnits="userSpaceOnUse" x="-20" y="-20" width="1040" height="1040">
+            <path class="path__reveal" pathLength="1" d="M500 0C430 20 260 20 260 70S740 180 740 240 260 350 260 410 740 520 740 580 260 690 260 750 740 860 740 920" fill="none" stroke="#fff" stroke-width="40"/>
+          </mask>
+        </defs>
+        <path class="path__line path__line--m" mask="url(#trail-mask-m)" d="M500 0C430 20 260 20 260 70S740 180 740 240 260 350 260 410 740 520 740 580 260 690 260 750 740 860 740 920"/>
       </svg>
       <div class="path__snail-wrap">
         <button class="snail" type="button" aria-label="The snail. Click to hear what it has to say">
@@ -110,12 +120,12 @@
         </button>
       </div>
       <ol>
-        <li style="--x:14%;--y:70px;--i:0" data-px="140" data-py="70"><a href="#about"><span class="path__pin"></span><svg class="path__icon" aria-hidden="true"><use href="#i-sprout"/></svg><span class="path__title">About</span><span class="path__sub">The short version</span></a></li>
-        <li style="--x:30%;--y:118px;--i:1" data-px="300" data-py="118"><a href="#now"><span class="path__pin"></span><svg class="path__icon" aria-hidden="true"><use href="#i-cup"/></svg><span class="path__title">Now</span><span class="path__sub">What I'm up to</span></a></li>
-        <li style="--x:46%;--y:62px;--i:2" data-px="460" data-py="62"><a href="#research"><span class="path__pin"></span><svg class="path__icon" aria-hidden="true"><use href="#i-scales"/></svg><span class="path__title">AI and law</span><span class="path__sub">What I research at Harvard</span></a></li>
-        <li style="--x:62%;--y:118px;--i:3" data-px="620" data-py="118"><a href="#journalism"><span class="path__pin"></span><svg class="path__icon" aria-hidden="true"><use href="#i-pen"/></svg><span class="path__title">Journalism</span><span class="path__sub">Stories and what happened next</span></a></li>
-        <li style="--x:78%;--y:62px;--i:4" data-px="780" data-py="62"><a href="#curiosities"><span class="path__pin"></span><svg class="path__icon" aria-hidden="true"><use href="#i-cloud"/></svg><span class="path__title">Curiosities</span><span class="path__sub">What I'm curious about</span></a></li>
-        <li style="--x:93%;--y:104px;--i:5" data-px="930" data-py="104"><a href="#contact"><span class="path__pin"></span><svg class="path__icon" aria-hidden="true"><use href="#i-mail"/></svg><span class="path__title">Contact</span><span class="path__sub">Just send me an email</span></a></li>
+        <li style="--x:14%;--y:70px;--mx:26.0%;--my:7.0%;--i:0" data-px="140" data-py="70" data-mx="260" data-my="70"><a href="#about"><span class="path__pin"></span><svg class="path__icon" aria-hidden="true"><use href="#i-sprout"/></svg><span class="path__title">About</span><span class="path__sub">The short version</span></a></li>
+        <li style="--x:30%;--y:118px;--mx:74.0%;--my:24.0%;--i:1" data-px="300" data-py="118" data-mx="740" data-my="240"><a href="#now"><span class="path__pin"></span><svg class="path__icon" aria-hidden="true"><use href="#i-cup"/></svg><span class="path__title">Now</span><span class="path__sub">What I'm up to</span></a></li>
+        <li style="--x:46%;--y:62px;--mx:26.0%;--my:41.0%;--i:2" data-px="460" data-py="62" data-mx="260" data-my="410"><a href="#research"><span class="path__pin"></span><svg class="path__icon" aria-hidden="true"><use href="#i-scales"/></svg><span class="path__title">AI and law</span><span class="path__sub">What I research at Harvard</span></a></li>
+        <li style="--x:62%;--y:118px;--mx:74.0%;--my:58.0%;--i:3" data-px="620" data-py="118" data-mx="740" data-my="580"><a href="#journalism"><span class="path__pin"></span><svg class="path__icon" aria-hidden="true"><use href="#i-pen"/></svg><span class="path__title">Journalism</span><span class="path__sub">Stories and what happened next</span></a></li>
+        <li style="--x:78%;--y:62px;--mx:26.0%;--my:75.0%;--i:4" data-px="780" data-py="62" data-mx="260" data-my="750"><a href="#curiosities"><span class="path__pin"></span><svg class="path__icon" aria-hidden="true"><use href="#i-cloud"/></svg><span class="path__title">Curiosities</span><span class="path__sub">What I'm curious about</span></a></li>
+        <li style="--x:93%;--y:104px;--mx:74.0%;--my:92.0%;--i:5" data-px="930" data-py="104" data-mx="740" data-my="920"><a href="#contact"><span class="path__pin"></span><svg class="path__icon" aria-hidden="true"><use href="#i-mail"/></svg><span class="path__title">Contact</span><span class="path__sub">Just send me an email</span></a></li>
       </ol>
     </nav>
 

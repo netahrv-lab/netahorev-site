@@ -30,34 +30,69 @@
 
   /* ---------- hero trail: the snail walks to whichever stop you point at ---------- */
   const path = document.querySelector('.path');
-  const line = path && path.querySelector('.path__line');
   const wrap = path && path.querySelector('.path__snail-wrap');
-  if (path && line && wrap) {
-    const total = line.getTotalLength();
+  const wide = matchMedia('(min-width: 900px)');
+  if (path && wrap && path.querySelector('.path__line')) {
     const stops = [...path.querySelectorAll('li')];
-    const stopLen = stops.map((li) => {
-      const x = parseFloat(li.dataset.px), y = parseFloat(li.dataset.py);
-      let best = 0, bestD = Infinity;
-      for (let i = 0; i <= 600; i++) {
-        const l = (i / 600) * total, p = line.getPointAtLength(l);
-        const d = (p.x - x) ** 2 + (p.y - y) ** 2;
-        if (d < bestD) { bestD = d; best = l; }
-      }
-      return best;
-    });
+    /* two trails: a wavy one across on desktop (1000x170 box), a winding one down on phones (1000x1000 box) */
+    let line, total, vbH, stopLen, sizeW = 23, sizeH = 27;
+    function setup() {
+      const desk = wide.matches;
+      line = path.querySelector(desk ? '.path__line--d' : '.path__line--m') || path.querySelector('.path__line');
+      vbH = desk ? 170 : 1000;
+      total = line.getTotalLength();
+      stopLen = stops.map((li) => {
+        const x = parseFloat(desk ? li.dataset.px : li.dataset.mx), y = parseFloat(desk ? li.dataset.py : li.dataset.my);
+        let best = 0, bestD = Infinity;
+        for (let i = 0; i <= 600; i++) {
+          const l = (i / 600) * total, p = line.getPointAtLength(l);
+          const d = (p.x - x) ** 2 + (p.y - y) ** 2;
+          if (d < bestD) { bestD = d; best = l; }
+        }
+        return best;
+      });
+      const box = wrap.getBoundingClientRect();
+      sizeW = box.width / 2 || 23; sizeH = (box.width * 42 / 64) || 27;
+    }
+    setup();
     let at = 0, raf = 0;
     const svgFlip = wrap.querySelector('svg');
     if (rtl && svgFlip) svgFlip.style.transform = 'scaleX(-1)';
     function place(l) {
-      const W = path.clientWidth;
+      const W = path.clientWidth, H = wide.matches ? 170 : path.clientHeight;
       const p = line.getPointAtLength(l), q = line.getPointAtLength(Math.min(total, l + 4));
-      const sx = W / 1000;
-      let x = p.x * sx; const y = p.y;
-      let ang = Math.atan2(q.y - p.y, (q.x - p.x) * sx) * 180 / Math.PI;
+      const sx = W / 1000, sy = H / vbH;
+      let x = p.x * sx; const y = p.y * sy;
+      let ang = Math.atan2((q.y - p.y) * sy, (q.x - p.x) * sx) * 180 / Math.PI;
       if (rtl) { x = W - x; ang = -ang; }
-      ang = Math.max(-28, Math.min(28, ang));
-      wrap.style.transform = `translate(${x - 23}px, ${y - 27}px) rotate(${ang}deg)`;
+      if (wide.matches) {
+        ang = Math.max(-28, Math.min(28, ang));
+      } else {
+        /* on the vertical trail: stay upright, just face the way it's crawling */
+        const dx = (q.x - p.x) * (rtl ? -1 : 1);
+        if (svgFlip && Math.abs(dx) > 0.05) svgFlip.style.transform = dx > 0 ? 'scaleX(1)' : 'scaleX(-1)';
+        ang = 0;
+      }
+      wrap.style.transform = `translate(${x - sizeW}px, ${y - sizeH}px) rotate(${ang}deg)`;
     }
+    /* phones have no hover: the snail crawls down the trail as you scroll past it */
+    let follow = 0, followRaf = 0, userWalk = 0;
+    function scrollWalk() {
+      if (wide.matches || reduce || Date.now() - userWalk < 1800) return;
+      const r = path.getBoundingClientRect();
+      const t = Math.min(1, Math.max(0, (innerHeight * 0.55 - r.top) / r.height));
+      follow = Math.max(stopLen[0], t * total);
+      cancelAnimationFrame(followRaf);
+      const ease = () => {
+        at += (follow - at) * 0.12;
+        place(at);
+        const snail = wrap.querySelector('.snail');
+        if (Math.abs(follow - at) > 0.5) { snail.classList.add('is-moving'); followRaf = requestAnimationFrame(ease); }
+        else snail.classList.remove('is-moving');
+      };
+      followRaf = requestAnimationFrame(ease);
+    }
+    addEventListener('scroll', scrollWalk, { passive: true });
     function walkTo(target) {
       cancelAnimationFrame(raf);
       const from = at, dist = target - from;
@@ -80,10 +115,12 @@
       const a = li.querySelector('a');
       a.addEventListener('mouseenter', () => walkTo(stopLen[i]));
       a.addEventListener('focus', () => walkTo(stopLen[i]));
+      a.addEventListener('touchstart', () => { userWalk = Date.now(); walkTo(stopLen[i]); }, { passive: true });
     });
     addEventListener('resize', () => place(at));
+    wide.addEventListener('change', () => { cancelAnimationFrame(raf); setup(); at = 0; place(0); walkTo(stopLen[0]); });
     /* after the trail finishes drawing, the snail sets off toward the first stop */
-    setTimeout(() => { if (matchMedia('(min-width: 900px)').matches && at === 0) walkTo(stopLen[0]); }, reduce ? 0 : 2100);
+    setTimeout(() => { if (at === 0) walkTo(stopLen[0]); }, reduce ? 0 : 2100);
   }
 
   /* ---------- top trail: reading progress, appears once the hero trail scrolls away ---------- */
