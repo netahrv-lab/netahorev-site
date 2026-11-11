@@ -619,3 +619,5 @@ h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
 /* Elle hangs into the empty space beside the "Updated" stamp instead of stretching the last row */
 @media (min-width: 1000px) { .now .now__doodle { align-items: start; margin-bottom: -5rem; padding-top: 0.6rem; } .now .now__doodle img { width: 10.5rem; } }
 @media (min-width: 900px) { #contact .ct-grid { grid-template-columns: auto 10rem; justify-content: start; column-gap: 5rem; } }
+@media (min-width: 900px) { #contact .ct-grid { grid-template-columns: auto 13rem; } }
+#contact .ct-doodle { width: 12rem; }
