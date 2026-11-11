@@ -478,3 +478,16 @@ h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
 .cartoon { margin: 2.2rem 0 0; width: min(22rem, 100%); display: grid; gap: 0.3rem; justify-items: center; color: var(--ink); }
 .cartoon svg { width: 100%; height: auto; overflow: visible; }
 .cartoon .ico { stroke-width: 2; }
+.cartoon--shoggoth { width: min(17rem, 100%); margin-top: 1.6rem; }
+.cartoon figcaption .sn-ref { font-family: var(--display); }
+
+@media (min-width: 900px) { .section { display: block; } }
+.about__meme { width: min(17rem, 80vw); }
+.about__meme .about__photo { width: 100%; }
+@media (min-width: 860px) { .about__meme { width: 100%; } }
+/* the shoggoth meme sits beside the Now list instead of adding height below it */
+.now-grid { display: grid; gap: 1.5rem; align-items: center; }
+.shoggoth { margin: 0; width: min(18rem, 100%); display: grid; gap: 0.45rem; }
+.shoggoth img { width: 100%; border-radius: 12px; border: 1px solid var(--line); background: #fff; transform: rotate(-1.2deg); box-shadow: 0 12px 26px -20px rgb(51 40 31 / 0.5); }
+.shoggoth figcaption { font-family: var(--hand); color: var(--ink-soft); font-size: 0.98rem; line-height: 1.4; }
+@media (min-width: 1000px) { .now-grid { grid-template-columns: minmax(0, 40rem) minmax(0, 18rem); column-gap: 3rem; justify-content: space-between; } .shoggoth { width: 100%; } }

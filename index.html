@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Rubik:wght@400;500&family=Playpen+Sans+Hebrew:wght@400;500&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=27">
+<link rel="stylesheet" href="/assets/style.css?v=32">
 <script>document.documentElement.classList.add('js');if(document.visibilityState==='visible')document.documentElement.classList.add('intro')</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Neta Horev","alternateName":["נטע חורב","Neta Chehanovski","נטע צ'חנובסקי"],"url":"https://netahorev.com/","image":"https://netahorev.com/assets/neta-horev.jpg","jobTitle":"Journalist, lawyer and LL.M. candidate","affiliation":{"@type":"CollegeOrUniversity","name":"Harvard Law School"},"sameAs":["https://www.instagram.com/netahrv/","https://www.linkedin.com/in/neta-horev-77a28816b/","https://www.tiktok.com/@neta_horev"]}
@@ -136,13 +136,17 @@
           <p class="lead">I was born in Israel in 1997, and I'm currently living in the Boston area while studying at Harvard.<input type="checkbox" class="sn-check" id="sn-1"><label class="sn-ref" for="sn-1" aria-label="Note 1">1</label><span class="sn"><b>1</b>Still figuring out the whole Boston winter thing. Ask me again in February.</span></p>
           <p>I've been a journalist with mako and N12 since 2021, and a lot of what I covered was AI. Somewhere along the way, I also went to law school, became a lawyer and a member of the Israel Bar, and ended up pursuing an LL.M. at Harvard Law School. These days, I'm researching a question I keep coming back to: what happens to judicial judgment when judges start relying on AI?</p>
         </div>
-        <img class="about__photo" src="/assets/neta-harvard.jpg" width="760" height="951" loading="lazy" alt="Neta grinning in a black suit on the lawn in front of Harvard Law School">
+        <figure class="meme about__meme">
+          <img class="about__photo" src="/assets/neta-shrug.jpg" width="640" height="717" loading="lazy" alt="Neta shrugging with open hands on the lawn in front of Harvard Law School">
+          <figcaption>My answer to most questions people ask me about AI, given the current state of the world.</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="section" id="now" aria-labelledby="now-h">
       <div class="section__head"><svg aria-hidden="true"><use href="#i-cup"/></svg><h2 id="now-h">What I'm up to</h2></div>
-      <ul class="now">
+      <div class="now-grid">
+        <ul class="now">
         <li><span class="now__k">Podcast</span><span>My husband Omer and I are working on a new podcast about AI. I come from the legal side, he comes from tech, and for now, our recording studio is our living room.</span></li>
         <li><span class="now__k">Research</span><span>Writing my LL.M. paper on AI and judicial discretion. Apparently, I have quite a lot to say about this.</span></li>
         <li><span class="now__k">Next</span><span>Planning to apply for an S.J.D., the doctorate in law.</span></li>
@@ -152,7 +156,12 @@
         <li><span class="now__k">Yoga</span><span>Addicted. Currently working on forearm stands and handstands.</span></li>
         <li><span class="now__k">On repeat</span><span>Vroom Vroom by Charli XCX.</span></li>
         <li><span class="now__k">Planning</span><span>A Christmas vacation. At the moment, this mostly involves having far too many tabs open.</span></li>
-      </ul>
+        </ul>
+        <figure class="shoggoth">
+          <img src="/assets/shoggoth.png?v=2" width="604" height="400" loading="lazy" alt="The well-known meme: a green shoggoth wearing a yellow smiley mask, saying I simply exhibit the behaviors that were engineered into my programming by my creators">
+          <figcaption>My AI safety reading group, in one picture.<input type="checkbox" class="sn-check" id="sn-7"><label class="sn-ref" for="sn-7" aria-label="Note 7">7</label><span class="sn"><b>7</b>After @TetraspaceWest's famous 2022 meme of a language model as a shoggoth wearing a smiley-face mask.</span></figcaption>
+        </figure>
+      </div>
       <p class="stamp">Updated November 2026</p>
     </section>
 
@@ -284,14 +293,8 @@
 
     <section class="section" id="curiosities" aria-labelledby="cur-h">
       <div class="section__head"><svg aria-hidden="true"><use href="#i-cloud"/></svg><h2 id="cur-h">Things I'm curious about</h2></div>
-      <div class="cur-intro">
-        <div class="prose">
-          <p>A few questions I've been thinking about lately. I don't have good answers to all of them yet.<input type="checkbox" class="sn-check" id="sn-3"><label class="sn-ref" for="sn-3" aria-label="Note 3">3</label><span class="sn"><b>3</b>If you have thoughts on any of these, I'd genuinely love to hear them.</span></p>
-        </div>
-        <figure class="meme">
-          <img src="/assets/neta-shrug.jpg" width="640" height="717" loading="lazy" alt="Neta shrugging with open hands on the lawn in front of Harvard Law School">
-          <figcaption>My answer to most of these questions. For now.</figcaption>
-        </figure>
+      <div class="prose" style="margin-bottom:1.8rem">
+        <p>A few questions I've been thinking about lately. I don't have good answers to all of them yet.<input type="checkbox" class="sn-check" id="sn-3"><label class="sn-ref" for="sn-3" aria-label="Note 3">3</label><span class="sn"><b>3</b>If you have thoughts on any of these, I'd genuinely love to hear them.</span></p>
       </div>
       <ul class="qs">
         <li><svg aria-hidden="true"><use href="#i-scales"/></svg><p>If AI could make better decisions than human judges, would we still have a reason to insist on having a human judge?</p></li>
@@ -353,6 +356,6 @@
 </main>
 
 <script type="application/json" id="snail-lines">["Hi, don't mind me. Just passing through.", "Feel free to keep reading. I'm not in a hurry.", "Wait, has anyone seen footnote 7?", "I've moved with my entire house, too. Neta and I understand each other."]</script>
-<script src="/assets/main.js?v=27" defer></script>
+<script src="/assets/main.js?v=32" defer></script>
 </body>
 </html>
