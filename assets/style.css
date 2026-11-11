@@ -623,3 +623,11 @@ h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
 #contact .ct-doodle { width: 12rem; }
 @media (min-width: 900px) { #contact .ct-grid { grid-template-columns: auto 11rem; } }
 #contact .ct-doodle { width: 10rem; }
+
+/* AI and law, take 3: lead across the top, two balanced lists, the shoggoth centred underneath as the section's closing image */
+#research .ai-lead { max-width: 46rem; margin-bottom: 1.6rem; }
+#research .ai-two { align-items: start; }
+#research .clips__paper a { font-weight: 600; }
+#research .shoggoth--center { display: grid; justify-items: center; gap: 0.5rem; width: auto; margin: 2.4rem auto 0; text-align: center; }
+#research .shoggoth--center img { width: min(17rem, 75vw); height: auto; }
+#research .shoggoth--center figcaption { max-width: 30rem; }
