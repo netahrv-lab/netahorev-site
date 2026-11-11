@@ -436,3 +436,10 @@ main { position: relative; z-index: 0; }
 .why-snail__img { width: 54px; height: auto; color: var(--olive); margin-bottom: 0.3rem; }
 .why-snail h2 { font-size: 1.35rem; font-style: italic; }
 .why-snail p { color: var(--ink-soft); font-family: var(--display); font-size: 1.08rem; line-height: 1.6; }
+
+/* spacing pass: no forced full-screen height (it left big empty gaps in short sections); one steady rhythm instead */
+@media (min-width: 900px) {
+  .section { min-height: 0; padding-block: clamp(4.5rem, 7vw, 6rem); }
+}
+.why-snail { margin-top: clamp(2.5rem, 6vw, 4rem); }
+.foot { padding-block: 1.5rem 2rem; }
