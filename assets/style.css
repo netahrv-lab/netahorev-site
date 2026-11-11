@@ -499,3 +499,19 @@ h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
     float: none; width: auto; margin: 0.5rem 0 0; padding: 0.55rem 0.75rem; background: var(--note); border-radius: 8px; color: var(--ink); font-size: 0.92rem;
   }
 }
+
+/* compact long sections on desktop so they come closer to one screen */
+@media (min-width: 1000px) {
+  .ai-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 3.5rem; align-items: start; }
+  .ai-grid .cv, .ai-grid .clips, .ai-grid .paper { max-width: none; }
+  .ai-grid .cartoon { margin-top: 0; }
+  .ai-grid .paper { margin-top: 1.8rem; }
+  /* Now: rows in two columns, label above text, the meme beside */
+  .now-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 15rem); align-items: start; }
+  .now { max-width: none; grid-template-columns: 1fr 1fr; column-gap: 2.5rem; }
+  .now li { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; padding-block: 0.7rem; }
+  .now li:nth-child(2) { border-top: 1px dashed var(--line); }
+}
+/* Now without the meme: the list uses the full width; the shoggoth lives in AI and law */
+@media (min-width: 1000px) { .now-grid { grid-template-columns: minmax(0, 1fr); } }
+.ai-grid .shoggoth { margin-top: 2rem; }
