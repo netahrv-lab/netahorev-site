@@ -443,3 +443,28 @@ main { position: relative; z-index: 0; }
 }
 .why-snail { margin-top: clamp(2.5rem, 6vw, 4rem); }
 .foot { padding-block: 1.5rem 2rem; }
+
+/* ---------- type: round and cute (Neta's pick, option C) ---------- */
+:root {
+  --display: "Fredoka", "Rubik", system-ui, sans-serif;
+  --body: "Rubik", "Assistant", system-ui, sans-serif;
+  --hand: "Playpen Sans Hebrew", "Fredoka", cursive;
+}
+body { font-size: 1.06rem; line-height: 1.75; }
+h1, h2, h3 { font-weight: 600; letter-spacing: -0.01em; }
+h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
+.hero__name { font-weight: 600; letter-spacing: -0.02em; }
+.brand, .path__title { font-weight: 500; }
+/* Fredoka has no italic: swap the italic accents for the handwriting face or upright text */
+.hero__aka, .now__k, .paper__kind, .portrait__cap, .why-snail h2, .clips a { font-style: normal; }
+.hero__aka { font-family: var(--hand); font-weight: 400; }
+.sn, .sn-check:checked + .sn-ref + .sn, .say, .why-snail p, .stamp, .now__k { font-family: var(--hand); font-style: normal; }
+.sn b { font-family: var(--display); }
+.clips a, .qs p, .mail { font-weight: 500; }
+.qs p { font-size: 1.08rem; line-height: 1.5; }
+.num { font-weight: 600; }
+.cv strong { font-weight: 500; }
+/* in About the margin holds the photo, so the footnote opens inline instead */
+@media (min-width: 1100px) {
+  .about .sn-check:checked + .sn-ref + .sn { float: none; width: auto; margin: 0.6rem 0; padding: 0.6rem 0.8rem; background: var(--note); border-radius: 8px; color: var(--ink); }
+}
