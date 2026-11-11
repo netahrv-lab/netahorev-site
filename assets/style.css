@@ -430,3 +430,9 @@ main { position: relative; z-index: 0; }
 
 .story { align-content: start; }
 #journalism .story-pair { align-items: start; }
+
+/* why a snail: a quiet note at the very bottom */
+.why-snail { max-width: 34rem; margin: clamp(3rem, 8vw, 5rem) auto 1rem; text-align: center; display: grid; justify-items: center; gap: 0.5rem; }
+.why-snail__img { width: 54px; height: auto; color: var(--olive); margin-bottom: 0.3rem; }
+.why-snail h2 { font-size: 1.35rem; font-style: italic; }
+.why-snail p { color: var(--ink-soft); font-family: var(--display); font-size: 1.08rem; line-height: 1.6; }
