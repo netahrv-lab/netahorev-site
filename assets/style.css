@@ -603,3 +603,19 @@ h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
   #curiosities .cur-body { grid-template-columns: minmax(0, 1fr) 16rem; column-gap: 2.5rem; }
   #curiosities .cur-body .cartoon { width: 100%; }
 }
+
+/* Doodles Neta picked (2026-11-11): curiosity cat, Elle in Now, coffee blob in Contact */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .doodle img { filter: invert(1) hue-rotate(180deg) brightness(1.1); } }
+:root[data-theme="dark"] .doodle img { filter: invert(1) hue-rotate(180deg) brightness(1.1); }
+#curiosities .cur-body .cartoon { width: min(13rem, 60%); }
+#curiosities .cur-body .cartoon figcaption { text-align: center; max-width: 15rem; }
+@media (min-width: 1100px) { #curiosities .cur-body { grid-template-columns: minmax(0, 1fr) 14rem; } #curiosities .cur-body .cartoon { width: 100%; } }
+.now .now__doodle { display: flex; justify-content: center; align-items: center; border: 0 !important; padding: 0.8rem 0 0; }
+.now .now__doodle img { width: min(12rem, 60%); height: auto; }
+#contact .ct-grid { display: grid; gap: 1.5rem; align-items: center; }
+#contact .ct-doodle { margin: 0 auto; width: 9rem; }
+#contact .ct-doodle img { width: 100%; height: auto; }
+@media (min-width: 900px) { #contact .ct-grid { grid-template-columns: minmax(0, 1fr) 11rem; column-gap: 3rem; } #contact .ct-doodle { width: 100%; } }
+/* Elle hangs into the empty space beside the "Updated" stamp instead of stretching the last row */
+@media (min-width: 1000px) { .now .now__doodle { align-items: start; margin-bottom: -5rem; padding-top: 0.6rem; } .now .now__doodle img { width: 10.5rem; } }
+@media (min-width: 900px) { #contact .ct-grid { grid-template-columns: auto 10rem; justify-content: start; column-gap: 5rem; } }
