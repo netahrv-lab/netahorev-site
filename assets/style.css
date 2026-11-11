@@ -621,3 +621,5 @@ h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
 @media (min-width: 900px) { #contact .ct-grid { grid-template-columns: auto 10rem; justify-content: start; column-gap: 5rem; } }
 @media (min-width: 900px) { #contact .ct-grid { grid-template-columns: auto 13rem; } }
 #contact .ct-doodle { width: 12rem; }
+@media (min-width: 900px) { #contact .ct-grid { grid-template-columns: auto 11rem; } }
+#contact .ct-doodle { width: 10rem; }
