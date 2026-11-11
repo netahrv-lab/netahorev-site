@@ -491,3 +491,5 @@ h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
 .shoggoth img { width: 100%; border-radius: 12px; border: 1px solid var(--line); background: #fff; transform: rotate(-1.2deg); box-shadow: 0 12px 26px -20px rgb(51 40 31 / 0.5); }
 .shoggoth figcaption { font-family: var(--hand); color: var(--ink-soft); font-size: 0.98rem; line-height: 1.4; }
 @media (min-width: 1000px) { .now-grid { grid-template-columns: minmax(0, 40rem) minmax(0, 18rem); column-gap: 3rem; justify-content: space-between; } .shoggoth { width: 100%; } }
+/* the shoggoth sits straight on the page, no white card */
+.shoggoth img { background: none; border: 0; border-radius: 0; box-shadow: none; }
