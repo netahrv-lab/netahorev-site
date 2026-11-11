@@ -579,3 +579,27 @@ h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
   #research .ai-col3 { grid-column: auto !important; grid-template-columns: 1fr !important; }
 }
 .about { align-items: center; }
+
+/* AI and law: two logical columns (who I am in AI | what I wrote) */
+#research .ai-two { display: grid; gap: 2.2rem; }
+#research .ai-left, #research .ai-right { display: grid; gap: 0.9rem; align-content: start; }
+#research .ai-left .lead { margin-bottom: 0.6rem; }
+#research .ai-two .subhead { margin: 0.6rem 0 0.2rem; font-size: 1.25rem; }
+#research .ai-two .shoggoth { width: min(16rem, 80%); margin-top: 0.8rem; }
+#research .ai-two .paper { margin-top: 1rem; max-width: none; }
+@media (min-width: 1000px) { #research .ai-two { grid-template-columns: 1fr 1fr; column-gap: 4rem; } }
+/* Academia: the two articles side by side */
+.papers-two { display: grid; gap: 1.4rem; margin-top: 2rem; }
+.papers-two .paper { margin: 0; max-width: none; }
+@media (min-width: 1000px) { .papers-two { grid-template-columns: 1fr 1fr; column-gap: 2rem; align-items: stretch; } }
+
+/* Curiosities: the robot-judge drawing sits beside the question cards, filling the column they leave empty */
+#curiosities .cur-lead { margin-bottom: 1.8rem; max-width: 46rem; }
+#curiosities .cur-body { display: grid; gap: 2rem; align-items: center; }
+#curiosities .cur-body .qs { max-width: none; }
+#curiosities .cur-body .cartoon { margin: 0 auto; width: min(17rem, 75%); }
+#curiosities .cur-body .cartoon img { width: 100%; height: auto; }
+@media (min-width: 1100px) {
+  #curiosities .cur-body { grid-template-columns: minmax(0, 1fr) 16rem; column-gap: 2.5rem; }
+  #curiosities .cur-body .cartoon { width: 100%; }
+}
