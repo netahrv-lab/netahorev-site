@@ -380,3 +380,10 @@ html, body { overflow-x: clip; }
   .path__snail-wrap { display: block; position: absolute; width: 42px; left: 0; top: 0; z-index: 2; will-change: transform; }
   .path__snail-wrap .snail { width: 42px; }
 }
+/* phones: keep the whole panorama instead of a tall crop */
+@media (max-width: 640px) {
+  .cover img { height: auto; aspect-ratio: 15 / 8; object-position: 50% 60%;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 70%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 70%, transparent 100%); }
+  .cover + .hero { margin-top: -1.5rem; }
+}
