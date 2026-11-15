@@ -632,3 +632,6 @@ h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
 #research .shoggoth--center { display: grid; justify-items: center; gap: 0.5rem; width: auto; margin: 2.4rem auto 0; text-align: center; }
 #research .shoggoth--center img { width: min(17rem, 75vw); height: auto; }
 #research .shoggoth--center figcaption { max-width: 30rem; }
+/* dark mode: the meme's black ink and speech text vanish on the dark page; flip the ink like the doodles */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .shoggoth img { filter: invert(1) hue-rotate(180deg) brightness(1.1); } }
+:root[data-theme="dark"] .shoggoth img { filter: invert(1) hue-rotate(180deg) brightness(1.1); }
