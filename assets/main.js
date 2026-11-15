@@ -6,6 +6,12 @@
   let lines = [];
   try { lines = JSON.parse(document.getElementById('snail-lines').textContent); } catch (e) { /* no lines, no talking */ }
 
+  /* ---------- cover loop: still for reduced motion ---------- */
+  const coverVid = document.querySelector('.cover video');
+  if (coverVid) {
+    if (reduce) { coverVid.removeAttribute('autoplay'); coverVid.pause(); }
+  }
+
   /* "Nudge curve": slow start, linear burst, long decaying tail (10/65/25 distance over 20/18/62 time). */
   function nudge(t) {
     if (t < 0.2) { const u = t / 0.2; return 0.10 * u * u * u; }

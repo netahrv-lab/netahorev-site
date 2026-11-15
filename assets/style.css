@@ -349,18 +349,19 @@ html { scrollbar-color: var(--olive-soft) var(--paper); accent-color: var(--oliv
 .hero__line { max-width: 40rem; }
 /* wide cover photo above the name */
 .cover { margin: clamp(1rem, 3vw, 1.75rem) 0 0; }
-.cover img { width: 100%; aspect-ratio: 15 / 7; object-fit: cover; object-position: 30% 60%; border-radius: 16px; }
-@media (max-width: 640px) { .cover img { aspect-ratio: 4 / 3; object-position: 22% 70%; } }
+.cover :is(img,video) { width: 100%; aspect-ratio: 15 / 7; object-fit: cover; object-position: 30% 60%; border-radius: 16px; }
+@media (max-width: 640px) { .cover :is(img,video) { aspect-ratio: 4 / 3; object-position: 22% 70%; } }
 .hero { padding-top: clamp(1.5rem, 4vw, 2.75rem); }
-@media (prefers-reduced-motion: no-preference) { .intro .cover img { animation: rise .7s var(--ease-out) both; } }
+@media (prefers-reduced-motion: no-preference) { .intro .cover :is(img,video) { animation: rise .7s var(--ease-out) both; } }
 /* cover as a full-bleed backdrop that dissolves into the page */
 html, body { overflow-x: clip; }
 .cover { width: 100vw; margin: 0 calc(50% - 50vw); position: relative; }
-.cover img { width: 100%; height: clamp(17rem, 58vh, 36rem); aspect-ratio: auto; border-radius: 0; object-position: 35% 62%;
+.cover :is(img,video) { width: 100%; height: clamp(17rem, 58vh, 36rem); aspect-ratio: auto; border-radius: 0; object-position: 35% 62%;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 55%, transparent 100%);
           mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 55%, transparent 100%); }
-@media (max-width: 640px) { .cover img { height: 22rem; aspect-ratio: auto; object-position: 22% 70%; } }
+@media (max-width: 640px) { .cover :is(img,video) { height: 22rem; aspect-ratio: auto; object-position: 22% 70%; } }
 .cover + .hero { margin-top: clamp(-7rem, -9vw, -3rem); position: relative; padding-top: 0; }
+.cover video { display: block; object-position: 50% 28%; }
 /* the trail on phones: a vertical winding path the snail walks down */
 @media (min-width: 900px) { .path__svg--m { display: none !important; } }
 @media (max-width: 899px) {
@@ -382,7 +383,7 @@ html, body { overflow-x: clip; }
 }
 /* phones: keep the whole panorama instead of a tall crop */
 @media (max-width: 640px) {
-  .cover img { height: auto; aspect-ratio: 15 / 8; object-position: 50% 60%;
+  .cover :is(img,video) { height: auto; aspect-ratio: 15 / 8; object-position: 50% 60%;
     -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 70%, transparent 100%);
             mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 70%, transparent 100%); }
   .cover + .hero { margin-top: -1.5rem; }
