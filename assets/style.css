@@ -635,3 +635,17 @@ h3, .story h3, .brief-list h3, .paper h3 { font-weight: 500; }
 /* dark mode: the meme's black ink and speech text vanish on the dark page; flip the ink like the doodles */
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .shoggoth img { filter: invert(1) hue-rotate(180deg) brightness(1.1); } }
 :root[data-theme="dark"] .shoggoth img { filter: invert(1) hue-rotate(180deg) brightness(1.1); }
+
+/* Substack invite: a strip right under the AI and law lead */
+.sub-strip { display: flex; align-items: center; gap: 1rem; margin: 0 0 2rem; padding: 0.9rem 1.2rem; background: var(--card); border: 1px solid var(--line); border-inline-start: 4px solid var(--terra); border-radius: 12px; text-decoration: none; transition: border-color .2s ease; }
+.sub-strip:hover { border-color: var(--olive-soft); border-inline-start-color: var(--terra); }
+.sub-strip__icon { flex: none; width: 1.6rem; height: 1.6rem; color: var(--terra); }
+.sub-strip__text { flex: 1; }
+.sub-strip__text strong { font-family: var(--display); font-weight: 500; margin-inline-end: 0.25rem; }
+.sub-strip__btn { flex: none; }
+.sub-strip:hover .sub-strip__btn { background: var(--ink); color: var(--paper); }
+@media (max-width: 640px) {
+  .sub-strip { flex-wrap: wrap; }
+  .sub-strip__icon { display: none; }
+  .sub-strip__text { flex-basis: 100%; }
+}
