@@ -291,7 +291,7 @@ html { scrollbar-color: var(--olive-soft) var(--paper); accent-color: var(--oliv
 
 /* ---------- contact ---------- */
 .contact h2 { font-size: clamp(2.4rem, 6vw, 3.6rem); }
-.mail { font-family: var(--display); font-size: clamp(1.4rem, 3.6vw, 2rem); display: inline-block; margin-top: 0.6rem; word-break: break-word; }
+.mail { font-family: var(--display); font-size: clamp(0.85rem, 4.6vw, 2rem); display: inline-block; margin-top: 0.6rem; white-space: nowrap; max-width: 100%; }
 
 /* ---------- footer ---------- */
 .foot { border-top: 1px solid var(--line); padding-block: 2rem 2.5rem; color: var(--muted); font-size: 0.92rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; }
